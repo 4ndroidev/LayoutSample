@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/avatar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/gundam_avatar"
+        android:layout_marginRight="20dp" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="@id/avatar"
+        android:layout_toRightOf="@id/avatar"
+        android:maxLines="1"
+        android:text="Gundam"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/avatar"
+        android:layout_alignLeft="@id/name"
+        android:maxLines="1"
+        android:text="10月10日 10:10"
+        android:textColor="?android:textColorSecondary"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/name"
+        android:layout_below="@id/time"
+        android:lineSpacingMultiplier="1.1"
+        android:paddingTop="8dp"
+        android:text="《机动战士高达》自1979年登场以来，已成为动画作品中最著名、最经久不衰、最庞大、也是盈利最高的系列。"
+        android:textSize="14sp" />
+
+
+    <com.androidev.widget.NineGridLayout
+        android:id="@+id/nine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/name"
+        android:layout_below="@id/content"
+        android:paddingTop="16dp"
+        app:dividerWidth="1dp" />
+
+</RelativeLayout>

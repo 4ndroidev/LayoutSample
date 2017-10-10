@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.androidev.layout.sample">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.androidev.sample.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.androidev.sample.boundlayout.BoundLayoutSample" />
+        <activity android:name="com.androidev.sample.refreshlayout.RecyclerViewSample" />
+        <activity android:name="com.androidev.sample.refreshlayout.GridViewSample" />
+        <activity android:name="com.androidev.sample.refreshlayout.ListViewSample" />
+        <activity android:name="com.androidev.sample.refreshlayout.RefreshLayoutSample" />
+        <activity android:name="com.androidev.sample.refreshlayout.NestedScrollViewSample" />
+        <activity android:name="com.androidev.sample.refreshlayout.ScrollViewSample" />
+        <activity android:name="com.androidev.sample.ninegridlayout.NineGridLayoutSample" />
+        <activity android:name="com.androidev.sample.flowlayout.FlowLayoutSample" />
+    </application>
+
+</manifest>
