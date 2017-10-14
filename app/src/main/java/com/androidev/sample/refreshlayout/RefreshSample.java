@@ -3,19 +3,19 @@ package com.androidev.sample.refreshlayout;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 import com.androidev.layout.sample.R;
 import com.androidev.refreshlayout.RefreshLayout;
+import com.androidev.sample.SampleFragment;
 
-public abstract class RefreshSample<T> extends AppCompatActivity {
+public abstract class RefreshSample<T> extends SampleFragment {
 
+    @SuppressWarnings(value = "unchecked")
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setTitle(getClass().getSimpleName());
-        setContentView(getLayoutId());
-        final RefreshLayout refreshLayout = (RefreshLayout) findViewById(R.id.refresh_layout);
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        final RefreshLayout refreshLayout = (RefreshLayout) view.findViewById(R.id.refresh_layout);
         refreshLayout.setOnRefreshListener(new RefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -27,10 +27,8 @@ public abstract class RefreshSample<T> extends AppCompatActivity {
                 }, 5000);
             }
         });
-        bindView((T) findViewById(R.id.content_view));
+        bindView((T) view.findViewById(R.id.content_view));
     }
-
-    protected abstract int getLayoutId();
 
     protected abstract void bindView(final T contentView);
 }

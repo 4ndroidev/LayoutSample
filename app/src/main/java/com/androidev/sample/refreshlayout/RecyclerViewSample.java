@@ -20,12 +20,12 @@ public class RecyclerViewSample extends RefreshSample<RecyclerView> {
 
     @Override
     protected void bindView(final RecyclerView contentView) {
-        contentView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        contentView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+        contentView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+        contentView.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayoutManager.VERTICAL));
         contentView.setAdapter(new RecyclerView.Adapter<RecyclerViewSample.TextViewHolder>() {
             @Override
             public RecyclerViewSample.TextViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-                LayoutInflater inflater = LayoutInflater.from(RecyclerViewSample.this);
+                LayoutInflater inflater = LayoutInflater.from(getContext());
                 return new RecyclerViewSample.TextViewHolder(inflater.inflate(R.layout.recycler_view_item, contentView, false));
             }
 
@@ -49,13 +49,13 @@ public class RecyclerViewSample extends RefreshSample<RecyclerView> {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(RecyclerViewSample.this, "click:" + (getAdapterPosition() + 1), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "click:" + (getAdapterPosition() + 1), Toast.LENGTH_SHORT).show();
                 }
             });
             itemView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
-                    Toast.makeText(RecyclerViewSample.this, "long click:" + (getAdapterPosition() + 1), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "long click:" + (getAdapterPosition() + 1), Toast.LENGTH_SHORT).show();
                     return true;
                 }
             });

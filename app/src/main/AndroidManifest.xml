@@ -15,15 +15,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.androidev.sample.boundlayout.BoundLayoutSample" />
-        <activity android:name="com.androidev.sample.refreshlayout.RecyclerViewSample" />
-        <activity android:name="com.androidev.sample.refreshlayout.GridViewSample" />
-        <activity android:name="com.androidev.sample.refreshlayout.ListViewSample" />
-        <activity android:name="com.androidev.sample.refreshlayout.RefreshLayoutSample" />
-        <activity android:name="com.androidev.sample.refreshlayout.NestedScrollViewSample" />
-        <activity android:name="com.androidev.sample.refreshlayout.ScrollViewSample" />
-        <activity android:name="com.androidev.sample.ninegridlayout.NineGridLayoutSample" />
-        <activity android:name="com.androidev.sample.flowlayout.FlowLayoutSample" />
+        <activity android:name="com.androidev.sample.SampleActivity" />
     </application>
 
 </manifest>

@@ -19,18 +19,18 @@ public class ScrollViewSample extends RefreshSample<ScrollView> {
     protected void bindView(ScrollView contentView) {
         final LinearLayout content = (LinearLayout) contentView.getChildAt(0);
         for (int i = 1; i <= 20; i++) {
-            Button button = new Button(ScrollViewSample.this);
+            Button button = new Button(getContext());
             button.setText("ITEM " + i);
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(ScrollViewSample.this, "click:" + (content.indexOfChild(v) + 1), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "click:" + (content.indexOfChild(v) + 1), Toast.LENGTH_SHORT).show();
                 }
             });
             button.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
-                    Toast.makeText(ScrollViewSample.this, "long click:" + (content.indexOfChild(v) + 1), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "long click:" + (content.indexOfChild(v) + 1), Toast.LENGTH_SHORT).show();
                     return true;
                 }
             });

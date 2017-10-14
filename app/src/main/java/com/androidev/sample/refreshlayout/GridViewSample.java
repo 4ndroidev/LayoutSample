@@ -39,7 +39,7 @@ public class GridViewSample extends RefreshSample<GridView> {
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
                 if (convertView == null) {
-                    convertView = LayoutInflater.from(GridViewSample.this).inflate(R.layout.grid_view_item, contentView, false);
+                    convertView = LayoutInflater.from(getContext()).inflate(R.layout.grid_view_item, contentView, false);
                 }
                 TextView textView = (TextView) convertView.findViewById(R.id.text);
                 textView.setText("item " + (position + 1));
@@ -49,13 +49,13 @@ public class GridViewSample extends RefreshSample<GridView> {
         contentView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(GridViewSample.this, "click:" + (position + 1), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "click:" + (position + 1), Toast.LENGTH_SHORT).show();
             }
         });
         contentView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(GridViewSample.this, "long click:" + (position + 1), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "long click:" + (position + 1), Toast.LENGTH_SHORT).show();
                 return true;
             }
         });

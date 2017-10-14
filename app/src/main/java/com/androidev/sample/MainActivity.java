@@ -34,7 +34,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void toSample(Class clazz) {
         Intent intent = new Intent();
-        intent.setClass(this, clazz);
+        intent.setClass(this, SampleActivity.class);
+        intent.putExtra("fragment", clazz.getName());
         startActivity(intent);
     }
 

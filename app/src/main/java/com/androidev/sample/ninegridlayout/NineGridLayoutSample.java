@@ -1,28 +1,32 @@
 package com.androidev.sample.ninegridlayout;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.androidev.adapter.BaseAdapter;
 import com.androidev.layout.sample.R;
+import com.androidev.sample.SampleFragment;
 import com.androidev.widget.NineGridLayout;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class NineGridLayoutSample extends AppCompatActivity {
+public class NineGridLayoutSample extends SampleFragment {
 
     private List<Item> data = new ArrayList<>();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setTitle(getClass().getSimpleName());
-        setContentView(R.layout.nine_grid_sample);
-        NineGridLayout nineGridLayout = (NineGridLayout) findViewById(R.id.nine);
+    public int getLayoutId() {
+        return R.layout.nine_grid_sample;
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        NineGridLayout nineGridLayout = (NineGridLayout) view.findViewById(R.id.nine);
         BaseAdapter<Item> adapter = new BaseAdapter<Item>(R.layout.nine_grid_item) {
             @Override
             public void onBindView(int position, View view, Item data) {

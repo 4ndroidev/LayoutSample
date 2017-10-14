@@ -1,16 +1,12 @@
 package com.androidev.sample.boundlayout;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-
 import com.androidev.layout.sample.R;
+import com.androidev.sample.SampleFragment;
 
-public class BoundLayoutSample extends AppCompatActivity {
+public class BoundLayoutSample extends SampleFragment {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setTitle(getClass().getSimpleName());
-        setContentView(R.layout.bound_sample);
+    public int getLayoutId() {
+        return R.layout.bound_sample;
     }
 }

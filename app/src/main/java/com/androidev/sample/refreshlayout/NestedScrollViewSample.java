@@ -20,18 +20,18 @@ public class NestedScrollViewSample extends RefreshSample<NestedScrollView> {
     protected void bindView(NestedScrollView contentView) {
         final LinearLayout content = (LinearLayout) contentView.getChildAt(0);
         for (int i = 1; i <= 20; i++) {
-            Button button = new Button(NestedScrollViewSample.this);
+            Button button = new Button(getContext());
             button.setText("ITEM " + i);
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(NestedScrollViewSample.this, "click:" + (content.indexOfChild(v) + 1), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "click:" + (content.indexOfChild(v) + 1), Toast.LENGTH_SHORT).show();
                 }
             });
             button.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
-                    Toast.makeText(NestedScrollViewSample.this, "long click:" + (content.indexOfChild(v) + 1), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "long click:" + (content.indexOfChild(v) + 1), Toast.LENGTH_SHORT).show();
                     return true;
                 }
             });
